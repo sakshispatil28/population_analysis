@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load dataset from GitHub (use the raw link)
+url = 'https://raw.githubusercontent.com/sakshispatil28/population_analysis/main/state_wise_population__2019.csv'
+df = pd.read_csv(url)
+
+# Scatter plot of population by states
+plt.figure(figsize=(10, 6))
+plt.scatter(df['State'], df['total_population'], s=df['total_population']*0.00005, color='green', alpha=0.5)
+
+# Adding labels and title
+plt.xlabel('States')
+plt.ylabel('Total Population')
+plt.title('Population Distribution of Indian States')
+
+# Rotating x-axis labels for better readability
+plt.xticks(rotation=90)
+
+# Display plot
+plt.show()
